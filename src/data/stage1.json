@@ -1,0 +1,111 @@
+{
+  "start": {
+    "boxes": [
+      {
+        "id": "dark",
+        "text": "黑暗",
+        "narration": "周圍一片黑暗，需要光源才能看清四周",
+        "next": "dark_room",
+		"position": {"x":  200, "y": 150}
+      }
+    ]
+  },
+
+  "dark_room": {
+    "boxes": [
+      {
+        "id": "unlit_light",
+        "text": "未點燃的油燈",
+        "narration": "油燈可以照亮周圍",
+        "next": "light_room",
+		"position": { "x": 200, "y": 150 }
+      },
+      {
+        "id": "dark_wall",
+        "text": "漆黑的牆",
+        "narration": "一片漆黑，看不出有什麼",
+		"position": { "x": 200, "y": 150 }
+      },
+      {
+        "id": "floor",
+        "text": "地板",
+        "narration": "好像有什麼東西掉在遞上",
+		"position": { "x": 250, "y": 350 },
+		"spawn": [
+			{
+			"id": "match",
+			"text": "火柴",
+			"narration":"一根火柴，或許能用來點燃油燈",
+			"position": { "x": 250, "y": 320 }
+			}
+		]
+      }
+	]
+  },
+
+  "light_room": {
+    "boxes": [
+      {
+        "id": "hovel",
+        "text": "破屋",
+        "narration": "",
+		"position": { "x": 150, "y": 150 },
+		"spawn": [
+			{
+				"id": "locked_door",
+				"text": "被鎖上的門",
+				"narration":"需要鑰匙才能打開",
+				"position": { "x": 250, "y": 320 }
+			},
+			{
+				"id": "closet",
+				"text": "衣櫃",
+				"narration":"",
+				"position": { "x": 250, "y": 320 },
+				"spawn": [
+					{
+					"id": "lockbox",
+					"text": "密碼箱",
+					"narration": "",
+					"position": { "x": 250, "y": 320 }
+					}
+				]
+			}
+		]
+      },
+	  {
+		"id": "light",
+		"text": "油燈",
+		"narration": "油燈已經點亮，能看清四周了",
+		"position": { "x": 250, "y": 320 }
+		
+	  },
+	  {
+		"id": "wall",
+		"text": "牆",
+		"narration": "牆上掛了三幅畫作",
+		"position": { "x": 450, "y": 150 },
+		"spawn": [
+			{
+				"id": "paint1",
+				"text": "畫作",
+				"narration": "上面畫了一隻鳥",
+				"position": { "x": 250, "y": 320 }	
+			},
+			{
+				"id": "paint2",
+				"text": "畫作",
+				"narration": "上面畫了一隻狗",
+				"position": { "x": 250, "y": 320 }
+			},
+			{
+				"id": "paint3",
+				"text": "畫作",
+				"narration": "上面畫了一隻羊",
+				"position": { "x": 250, "y": 320 }
+			}
+		]
+	  }
+    ]
+  }
+}
