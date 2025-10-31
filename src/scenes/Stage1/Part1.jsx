@@ -1,27 +1,41 @@
 import { useState } from 'react'
 import Narration from "../../components/Narration"
 import ClickableBox from '../../components/ClickableBox'
+import stage1Data from '../../data/stage1Data.json'
 
-function Part1()  {
-	const [narration, setNarration] = useState(null)
-	const [isSelected, setIsSelected] = useState()
+export default function Stage1()  {
+	const [currentNode, setCurrentNode] = useState("start")
+	const [boxes ,setBoxes] = useState(stage1Data["start"].boxes)
+	const [narration, setNarration] = useState("")
+	const [selectedBoxId, setSelectedBoxId] = useState(null)
 
-	function handleClick() {
-		setIsSelected(true)
-	}
+	function handleClick(box) {
+		if (selectedBoxId != box.id) {
+			setSelectedBoxId(box.id)
+			return
+		}
 
-	function  handleNarration(contents){
-		if (isSelected) {setNarration(contents)}
+		setNarration(box.narration)
+
+		if (box.spawn) {return}
 	}
 	
 	return (
 	  <>
-	  	<Narration contents={narration}/>
-		<ClickableBox onClick={() => {handleClick();handleNarration("四周一片黑暗")}} isSelected={isSelected}>
-			<p>黑暗</p>
-		</ClickableBox>
+	  	<div className="relative w-full h-screen bg-black text-white overflow-hidden">
+	      <Narration contents={narration}/>
+
+	      {boxes.map(box => (
+			  <ClickableBox 
+			   	  key={box.id}
+				  onClick={() => {handleClick(box)} }
+				  isSelected={selectedBoxId === box.id}
+				  position={box.position}
+			  >
+			    {box.text}
+			  </ClickableBox>
+		  ))}
+		</div>
 	  </>
 	)
 }
-
-export default Part1

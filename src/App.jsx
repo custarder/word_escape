@@ -15,7 +15,6 @@ function App() {
 		return <StartScreen onStart={() => handleScene("select")}/>
 	case "select":
 		return <LevelSelect onClick={() =>handleScene("stage1")}/>
-	
 	case "stage1":
 		return <Part1 />
   }

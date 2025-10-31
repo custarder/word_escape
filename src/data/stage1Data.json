@@ -6,7 +6,7 @@
         "text": "黑暗",
         "narration": "周圍一片黑暗，需要光源才能看清四周",
         "next": "dark_room",
-		"position": {"x":  200, "y": 150}
+		"position": {"x":  960, "y": 540}
       }
     ]
   },
