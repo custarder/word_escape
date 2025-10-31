@@ -1,45 +1,42 @@
 {
-  "start": {
+  "dark_room": {
     "boxes": [
-      {
+		{
         "id": "dark",
         "text": "黑暗",
         "narration": "周圍一片黑暗，需要光源才能看清四周",
-        "next": "dark_room",
-		"position": {"x":  960, "y": 540}
-      }
-    ]
-  },
-
-  "dark_room": {
-    "boxes": [
-      {
-        "id": "unlit_light",
-        "text": "未點燃的油燈",
-        "narration": "油燈可以照亮周圍",
         "next": "light_room",
-		"position": { "x": 200, "y": 150 }
-      },
-      {
-        "id": "dark_wall",
-        "text": "漆黑的牆",
-        "narration": "一片漆黑，看不出有什麼",
-		"position": { "x": 200, "y": 150 }
-      },
-      {
-        "id": "floor",
-        "text": "地板",
-        "narration": "好像有什麼東西掉在遞上",
-		"position": { "x": 250, "y": 350 },
+		"position": {"x":  960, "y": 540},
 		"spawn": [
 			{
-			"id": "match",
-			"text": "火柴",
-			"narration":"一根火柴，或許能用來點燃油燈",
-			"position": { "x": 250, "y": 320 }
+				"id": "unlit_light",
+				"text": "未點燃的油燈",
+				"narration": "油燈可以照亮周圍",
+				"next": "light_room",
+				"position": { "x": 200, "y": 150 }
+      		},
+      		{
+				"id": "dark_wall",
+				"text": "漆黑的牆",
+				"narration": "一片漆黑，看不出有什麼",
+				"position": { "x": 200, "y": 150 }
+			},
+			{
+				"id": "floor",
+				"text": "地板",
+				"narration": "好像有什麼東西掉在遞上",
+				"position": { "x": 250, "y": 350 },
+				"spawn": [
+					{
+						"id": "match",
+						"text": "火柴",
+						"narration":"一根火柴，或許能用來點燃油燈",
+						"position": { "x": 250, "y": 320 }
+					}
+				]
 			}
 		]
-      }
+	}
 	]
   },
 
